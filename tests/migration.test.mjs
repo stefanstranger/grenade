@@ -6,7 +6,7 @@ import { Script, runInNewContext } from 'node:vm';
 import test from 'node:test';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const read = (...parts) => readFileSync(path.join(root, ...parts), 'utf8');
+const read = (...parts) => readFileSync(path.join(root, ...parts), 'utf8').replaceAll('\r\n', '\n');
 const manifest = JSON.parse(read('plugin.json'));
 const marketplace = JSON.parse(read('.github', 'plugin', 'marketplace.json'));
 
