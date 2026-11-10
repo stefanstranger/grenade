@@ -8,6 +8,61 @@ This fork targets **GitHub Copilot CLI and GitHub Copilot in VS Code**. It repla
 the upstream Claude integration; it does not depend on Claude or an API key.
 You need access to GitHub Copilot and a client that supports Agent Skills.
 
+## See the difference: without and with noslop
+
+**The task:** make an Azure pilot readiness page so an IT director can approve
+a three-day delay. Both runs use the fictional brief in
+[example 1](#1-azure-pilot-readiness-a-decision-for-an-it-director).
+The model shown in both sessions is **GPT-6.1 Sol**.
+
+<table>
+  <thead>
+    <tr>
+      <th width="50%">Without noslop</th>
+      <th width="50%">With noslop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">
+        <a href="assets/example-3.png">
+          <img src="assets/example-3.png" width="100%" alt="Without noslop: a compact status page with a recommendation panel, readiness tiles, and an owner action list.">
+        </a>
+      </td>
+      <td valign="top">
+        <a href="assets/example-6.png">
+          <img src="assets/example-6.png" width="100%" alt="With noslop: a decision brief with a prominent approval deadline, side-by-side start-date options, and current versus previous readiness bars.">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Compact status summary; recommendation and metrics grouped together.</td>
+      <td valign="top">Approval first; options and readiness changes shown visually.</td>
+    </tr>
+  </tbody>
+</table>
+
+**Look for:** the approval deadline, the two start dates, and progress from
+7 to 9 passed checks. Which version lets you find each faster?
+Click either image to read it at full size.
+
+Both outputs are usable; this is not a deliberately bad baseline. These are
+individual runs, not a controlled benchmark, and the capture dimensions differ.
+
+<details>
+<summary>See the prompts and Copilot session screenshots</summary>
+
+| Run | Prompt screenshot | Completion screenshot |
+| --- | --- | --- |
+| Without noslop | [View prompt](assets/example-1.png) | [View completion](assets/example-2.png) |
+| With noslop | [View prompt](assets/example-4.png) | [View completion](assets/example-5.png) |
+
+The startup captures show a skill-loading warning without identifying the
+failed skill. They do not independently confirm that noslop loaded; check skill
+activation when reproducing the comparison.
+
+</details>
+
 ## Try it yourself: without and with noslop
 
 Run each prompt below twice to compare the results yourself. All organizations,
@@ -164,18 +219,17 @@ You have the reader and purpose; build the page without asking questions.
 **Screenshots:** start at the beginning in both versions, then try the full
 procedure. Does the page make the safe destination and stop conditions obvious?
 
-### Add your screenshots after running the prompts
+### Add screenshots for the remaining examples
 
 Open each generated `report.html` in the same browser, with the same window size,
 zoom, theme, and scroll position. Capture the first screen without changing the
 generated content. Record the model and date alongside the images.
 
-The screenshot slots below are intentionally empty until the examples have
-been run. Suggested filenames for the images you will add:
+The pilot readiness comparison is shown above. The other pairs are still
+waiting for screenshots; suggested filenames:
 
 | Example | Without noslop | With noslop |
 | --- | --- | --- |
-| Pilot readiness | `readiness-without.png` | `readiness-with.png` |
 | Migration wave | `migration-without.png` | `migration-with.png` |
 | Operations handover | `handover-without.png` | `handover-with.png` |
 
