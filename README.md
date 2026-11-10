@@ -10,6 +10,8 @@ You need access to GitHub Copilot and a client that supports Agent Skills.
 
 ## See the difference: without and with noslop
 
+### Pilot readiness
+
 **The task:** make an Azure pilot readiness page so an IT director can approve
 a three-day delay. Both runs use the fictional brief in
 [example 1](#1-azure-pilot-readiness-a-decision-for-an-it-director).
@@ -60,6 +62,96 @@ individual runs, not a controlled benchmark, and the capture dimensions differ.
 The startup captures show a skill-loading warning without identifying the
 failed skill. They do not independently confirm that noslop loaded; check skill
 activation when reproducing the comparison.
+
+</details>
+
+### Migration wave
+
+**The task:** help a migration lead find blockers, owners, and deadlines across
+12 applications. Both runs use [example 2](#2-migration-wave-a-daily-view-for-the-migration-lead).
+
+<table>
+  <thead>
+    <tr>
+      <th width="50%">Without noslop</th>
+      <th width="50%">With noslop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">
+        <a href="assets/migration-without.png">
+          <img src="assets/migration-without.png" width="100%" alt="Without noslop: a migration dashboard with a large header, status tiles, deadline panels, and four exception cards above the application register.">
+        </a>
+      </td>
+      <td valign="top">
+        <a href="assets/migration-with.png">
+          <img src="assets/migration-with.png" width="100%" alt="With noslop: the confirmation deadline comes first, followed by status totals, four exception cards, and compact lists of all eight ready applications.">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Summary tiles, deadlines, exception cards, then a full register.</td>
+      <td valign="top">Deadline first; all 12 application names fit in view.</td>
+    </tr>
+  </tbody>
+</table>
+
+**Look for:** Casey's confirmation deadline and Priya's DNS blocker. Both pages
+highlight exceptions; the noslop version uses less vertical space before the
+ready applications. Click either image for the full-size capture.
+
+### Operations handover
+
+**The task:** guide a first-time operator through a four-step backup-restore
+lab. Both runs use [example 3](#3-operations-handover-a-guide-for-first-time-operators).
+
+<table>
+  <thead>
+    <tr>
+      <th width="50%">Without noslop</th>
+      <th width="50%">With noslop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">
+        <a href="assets/handover-without.png">
+          <img src="assets/handover-without.png" width="100%" alt="Without noslop: a scrolling restore worksheet with a large introduction, safety banner, reference sidebar, and editable checklist fields.">
+        </a>
+      </td>
+      <td valign="top">
+        <a href="assets/handover-with.png">
+          <img src="assets/handover-with.png" width="100%" alt="With noslop: a four-step visual path above one active step, showing the isolated destination, overwrite warning, ticket evidence, and Back and Next navigation.">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Scrolling worksheet with input fields and an exercise reference.</td>
+      <td valign="top">One step at a time, with Back and Next.</td>
+    </tr>
+  </tbody>
+</table>
+
+**Look for:** the test destination, overwrite warning, and next action. These
+are the initial screens: the noslop guide reveals later instructions through
+navigation rather than scrolling. The baseline offers editable ticket fields;
+the noslop version focuses on reading and following the procedure.
+
+<details>
+<summary>How the migration and handover comparisons were made</summary>
+
+- **Model and date:** GPT-6.1 Sol, 10 November 2026.
+- **Prompts:** the README briefs below, unchanged except for adding
+  `Use the noslop skill.` to each with-noslop run.
+- **Isolation:** four fresh sessions in separate empty folders; matching
+  built-in skills, no personal skills, and noslop available only in the two
+  with-noslop sessions. Both logs explicitly confirm `skill(noslop)`.
+- **Captures:** Microsoft Edge, 1440 x 1000 viewport, light color preference,
+  reduced motion, initial page state, and no scrolling.
+- **Outputs:** the first completed generation from each session, without
+  hand-editing or rerolling. Screenshots are unedited. These are illustrative
+  comparisons, not a guarantee that every task improves.
 
 </details>
 
@@ -219,21 +311,14 @@ You have the reader and purpose; build the page without asking questions.
 **Screenshots:** start at the beginning in both versions, then try the full
 procedure. Does the page make the safe destination and stop conditions obvious?
 
-### Add screenshots for the remaining examples
+### Capture your own comparisons
 
 Open each generated `report.html` in the same browser, with the same window size,
 zoom, theme, and scroll position. Capture the first screen without changing the
 generated content. Record the model and date alongside the images.
 
-The pilot readiness comparison is shown above. The other pairs are still
-waiting for screenshots; suggested filenames:
-
-| Example | Without noslop | With noslop |
-| --- | --- | --- |
-| Migration wave | `migration-without.png` | `migration-with.png` |
-| Operations handover | `handover-without.png` | `handover-with.png` |
-
-Once captured, add each pair side by side under its prompt. Label them
+All three example pairs are shown above. To add another comparison, place
+your screenshots in `assets` and show them side by side in this README. Label them
 **Without noslop** and **With noslop**; describe the observed differences rather
 than promising an improvement the screenshots do not show.
 
