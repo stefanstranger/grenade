@@ -266,24 +266,6 @@ React, TypeScript, Tailwind CSS, shadcn/ui, Recharts, Motion, and lucide-react.
 Publishing to GitHub/Vercel requires their tools and accounts and an explicit
 request to publish; a local HTML page needs neither.
 
-## Examples
-
-Open these files locally; no server or Claude preview runtime is required.
-They use fictional sample data.
-
-| Reader's job | Example |
-| --- | --- |
-| Decide | [Decision page](examples/decision-page.html) |
-| Catch up | [Monthly report](examples/monthly-report.html) |
-| Keep checking | [Hiring dashboard](examples/hiring-dashboard.html) |
-| Follow steps | [Expense guide](examples/expense-guide.html) |
-| Say yes | [Pitch slides](examples/pitch-slides.html) |
-| Use a tool | [Deal pricer](examples/deal-pricer.html) |
-| Look something up | [Support cheat sheet](examples/support-cheat-sheet.html) |
-| Fix a page | [Before](examples/sloppy-dashboard.html) / [after](examples/fixed-dashboard.html) |
-
-The deliberately sloppy "before" example keeps its original styling.
-
 ## Development
 
 The canonical instructions live in `.github/skills/noslop/SKILL.md`. The root
@@ -291,7 +273,7 @@ The canonical instructions live in `.github/skills/noslop/SKILL.md`. The root
 the same file. The marketplace catalog is `.github/plugin/marketplace.json`.
 No Claude plugin manifests are shipped.
 
-Run the dependency-free packaging and example checks with Node.js 22 or later:
+Run the dependency-free packaging and installation checks with Node.js 22 or later:
 
 ```shell
 node --test
