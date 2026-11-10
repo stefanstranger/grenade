@@ -1,0 +1,11 @@
+{
+  "name": "noslop",
+  "version": "2.0.0",
+  "description": "Create or improve HTML pages with GitHub Copilot: clear visuals, reader-first layouts, and GitHub-inspired styling.",
+  "author": { "name": "stefanstranger" },
+  "homepage": "https://github.com/stefanstranger/grenade",
+  "repository": "https://github.com/stefanstranger/grenade",
+  "license": "MIT",
+  "keywords": ["copilot", "html", "design", "writing", "slop"],
+  "skills": "./.github/skills"
+}

@@ -1,21 +1,21 @@
 ---
 name: noslop
 description: >-
-  Makes or fixes Claude artifacts (updates, briefs, memos, dashboards, guides, pitches,
+  Makes or fixes HTML pages with GitHub Copilot (updates, briefs, memos, dashboards, guides, pitches,
   tools) so someone with zero context gets them in 5 seconds: always HTML, the form picked
   from the reader's job, visuals instead of text, a header that says what it is, plain
-  sentences, every detail kept, and Claude's own look. Use whenever you make an artifact or
+  sentences, every detail kept, and GitHub-inspired styling. Use whenever you make an artifact or
   page someone else will read, when asked to fix, clean up or deslop one, or
   for the web version (React site on GitHub and Vercel behind a passcode).
 ---
 
 # No slop.
 
-Claude: you were sent here to make an artifact, to fix one, or to make the web version (section 8). Follow this page. You need nothing else from this repo.
+GitHub Copilot: use this skill to make an HTML page, fix one, or make the web version (section 8). It works in Copilot CLI and VS Code agent mode.
 
-**These rules beat every design default you have,** including the suggestions of a built-in artifact type (Dashboard, Doc, Slides). Where they disagree, this page wins.
+Use these rules instead of generic design defaults. Follow the user's explicit requirements and the host's tool permissions.
 
-**Always build a plain HTML artifact.** Never a Claude Doc, a plain document or a long chat reply: those read like a message, not like something you send your boss. Don't start from a built-in artifact type either: its default layout is often the slop.
+**Build a real HTML file in the workspace**, with a descriptive filename such as `monthly-report.html`. Include a doctype, `lang`, UTF-8 charset, viewport metadata, a title, and inline CSS and JavaScript for a standalone page. Do not return only a code fence or a long chat reply. Open the saved file in a browser or VS Code preview when available; Copilot does not provide an artifact canvas. End with the file path and a short summary.
 
 ## 1. Know the reader and the job
 
@@ -25,13 +25,13 @@ Before you build, you need three answers:
 2. What should they do after: decide, catch up, keep checking, learn, say yes, or use it?
 3. Will they read it once, or come back to it?
 
-If the request doesn't answer them, ask as clickable questions. Ask nothing else. Then build.
+If the request doesn't answer them, ask with the host's question tool when available, or in chat otherwise. Ask nothing else. Then build.
 
 If it all fits in a 5-line message, say so, and write the message instead.
 
 ## 2. Pick the form from the job
 
-The job decides the form, and the form decides the layout. A report, a decision page and a guide must not share one skeleton of tiles, a box and tabs. Same Claude look, different layouts.
+The job decides the form, and the form decides the layout. A report, a decision page and a guide must not share one skeleton of tiles, a box and tabs. Same GitHub-inspired style, different layouts.
 
 | The reader needs to… | Build | It looks like |
 |---|---|---|
@@ -52,7 +52,7 @@ When a job mixes two, lead with the main one.
 3. **Normal sentences.** Write every title, heading and label the way you'd say it to a colleague: "4 candidates have no interview date yet", not "Waiting with no date". No clever, punchy or poetic phrases. No subtitle under each heading.
 4. **Simple is not empty.** Use simple words, but keep every detail the reader needs to act: amounts, limits, dates, names, who approves, exceptions, examples, links. A guide lets someone do the whole thing without asking anyone. A policy or a process shows its owner, its start date and who to ask. Every number that changed says what it's compared to, in a short tag: "+$1,043 vs September", never "+$1,043". Detail the reader needs, but not at first glance, goes one click away (a row that opens, or a tab on a dashboard): kept, but never on the first screen.
 5. **No walls of text, no subtext.** 2 lines per paragraph at most. 10 words per table cell at most. More than 6 rows of sentences? Split them into cards by topic. Bold the word that matters in each line. Each thing gets one label, never a label plus a note: no caption under a number, no helper line under a card title or a heading. If it needs the note to make sense, change the label. Small grey text is still text: legends, roles, owner and date lines under items. Keep only what the reader acts on.
-6. **Look like Claude.** People already know Claude's look, so a new one makes them work. Use the style kit below: Claude's colors, its 2 fonts, its cards and its buttons. Claude's clay is the only accent, for the main button and the one thing to look at. Green, red and amber only mean good, bad and watch.
+6. **Use a GitHub-inspired look.** Use the style kit below: neutral surfaces, system sans-serif typography, subtle borders, compact cards, and blue accents. Blue marks the main action and the one thing to look at. Green, red and amber only mean good, bad and watch. This is an inspired theme, not an official GitHub component library.
 7. **One place to start.** The biggest thing on the screen is the most important thing. The eye knows where to go first, second, third. Never one long scroll. A report, a decision page or a proposal fits about 2 screens and reads top to bottom, with no tabs: if it doesn't fit, cut more. Tabs belong only on a dashboard or a reference page, for reference detail. **Hard limits on every page:** at most 4 sections under the first screen, at most 5 items in a card or a list, at most 1 table. More than that? Keep what the reader acts on this week, and cut the rest. A guide uses steps; a pitch uses slides.
 8. **The first screen stands alone.** Someone who reads only what shows before scrolling knows what this is, the point, the 2 or 3 reasons behind it, and what to do. It holds the header line, the title, the ask, and one main visual or at most 4 numbers, with the reasons as short labeled items. Aim for 50 to 120 words on it, the header line not counted. Under 50 usually means you hid the reasons; over 120 means walls of text. Never stretch it to the window's height or pad it with empty space: it ends where its content ends. Only a cheat sheet, made for looking things up, can hold more.
 9. **Cut, don't hide.** Moving text into a tab or a row that opens is not cutting it. Only reference detail goes one click away: the full table, the FAQ, the method. The reasons, the risks that change the answer, the owner and the next step stay in view.
@@ -78,7 +78,7 @@ Never ship a page with these:
 - Walls of text: long paragraphs, tables full of sentences, a dozen rows that look the same.
 - A change with nothing to compare it to: "+12%" instead of "+12% vs September".
 - A row of identical cards, each with its own little chart. Use one main chart, with plain numbers around it.
-- A look that isn't Claude's: blue buttons, new fonts, many text sizes, gradients, emoji as icons.
+- A look outside the style kit: decorative fonts, many text sizes, gradients, emoji as icons.
 - One long scroll that tries to hold everything.
 - Badges, pills or numbers (01, 02, 03) that carry no information.
 - Text or pills spilling out of their boxes, a big number broken onto 2 lines, a grid of 10 narrow columns.
@@ -100,7 +100,7 @@ You got a page: a link, a file, code or a screenshot. Start from its reader, not
 5. If a stranger would call it the same page, rebuild again.
 6. Check every number, count and claim against the old page. A rebuild must not make a fact wrong.
 
-If the page was made from a built-in artifact type, build the new one as a new plain HTML artifact instead of editing it in place. Add no fact, number or name that wasn't there. When you're done, your chat reply is short: the slop signs you found (one short line each, 6 at most), then one line on what you built. No list of every change.
+For a rebuild, save a new HTML file rather than overwriting the original unless the user asks for an in-place edit. Add no fact, number or name that wasn't there. When you're done, your chat reply is short: the slop signs you found (one short line each, 6 at most), then the saved file path and one line on what you built. No list of every change.
 
 ## 6. Check before you show it
 
@@ -117,7 +117,7 @@ Read it as the person from step 1, with zero context:
 - Read every heading out loud. Is it a normal sentence?
 - Is every detail there that they need to act without asking anyone?
 - Does every change say what it's compared to?
-- Does it look like Claude?
+- Does it use the GitHub-inspired style kit?
 - Could they forward it to their own boss without explaining anything?
 
 If any answer is no, fix it first.
@@ -126,41 +126,50 @@ If any answer is no, fix it first.
 
 Start every page from this. Add only what the page needs.
 
-- **Fonts:** serif for the title and section headings, like Claude's greeting. Sans for everything else.
+- **Fonts:** system sans-serif throughout, with semibold titles and section headings. No font downloads.
 - **Sizes:** only 5. 40px big numbers, 32px title, 22px section headings, 16px text, 13px labels.
-- **Charts:** inline SVG or Chart.js. The bar or line that matters in clay, the rest in gray.
-- **Icons:** simple line icons drawn in SVG, in gray or clay. Never emoji.
-- **Nothing spills out of its box.** You can't see the page you build, so use layouts that can't break. No grid with more than 6 columns: a week of 10 days becomes a list or a timeline that wraps. Never a pill, a tag or `white-space: nowrap` inside a box narrower than 200px. A number in a tile fits on one line at every width ("$400", with "was $200" as its tag, never "$200 → $400"). Every box grows with its content. Picture it at 1440px and at 400px wide: if any text could overflow, overlap or wrap mid-number, change the layout.
+- **Charts:** inline SVG for standalone files. The bar or line that matters in blue, the rest in gray.
+- **Icons:** simple line icons drawn in SVG, in gray or blue. Never emoji.
+- **Nothing spills out of its box.** Use layouts that can't break, and inspect them in a browser when browser tools are available. No grid with more than 6 columns: a week of 10 days becomes a list or a timeline that wraps. Never a pill, a tag or `white-space: nowrap` inside a box narrower than 200px. A number in a tile fits on one line at every width ("$400", with "was $200" as its tag, never "$200 → $400"). Every box grows with its content. Check at 1440px and at 400px wide: if any text could overflow, overlap or wrap mid-number, change the layout. If no browser is available, review the responsive CSS and say that visual inspection was not performed.
 
 ```css
 :root {
-  --bg: #fff; --soft: #f9f9f9; --card: #fff;
-  --text: rgba(0,0,0,.9); --text-2: rgba(0,0,0,.6); --text-3: rgba(0,0,0,.47);
-  --line: rgba(0,0,0,.12); --shadow: 0 4px 20px rgba(0,0,0,.075);
-  --clay: #d97757; --clay-strong: #c6613f;
-  --good: #006c10; --good-bg: rgba(16,161,34,.14);
-  --bad: #a42528; --bad-bg: rgba(220,60,61,.12);
-  --watch: #794c02; --watch-bg: rgba(251,179,21,.16);
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg: #ffffff; --soft: #f6f8fa; --card: #ffffff;
+  --text: #1f2328; --text-2: #59636e; --text-3: #59636e;
+  --line: #d1d9e0; --shadow: 0 1px 3px rgba(31,35,40,.08);
+  --accent: #0969da; --accent-strong: #0550ae; --action-bg: #0550ae;
+  --good: #1a7f37; --good-bg: rgba(26,127,55,.12);
+  --bad: #cf222e; --bad-bg: rgba(207,34,46,.12);
+  --watch: #9a6700; --watch-bg: rgba(154,103,0,.12);
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #151515; --soft: #0b0b0b; --card: #1f1f1f;
-  --text: rgba(255,255,255,.93); --text-2: rgba(255,255,255,.57); --text-3: rgba(255,255,255,.4);
-  --line: rgba(255,255,255,.12); --shadow: none;
-  --good: #53c556; --bad: #f17778; --watch: #e49c06; color-scheme: dark; } }
-/* repeat the dark values under :root[data-theme="dark"] */
+  --bg: #0d1117; --soft: #010409; --card: #151b23;
+  --text: #f0f6fc; --text-2: #9198a1; --text-3: #9198a1;
+  --line: #3d444d; --shadow: none;
+  --accent: #58a6ff; --accent-strong: #79c0ff; --action-bg: #1f6feb;
+  --good: #3fb950; --bad: #f85149; --watch: #d29922; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0d1117; --soft: #010409; --card: #151b23;
+  --text: #f0f6fc; --text-2: #9198a1; --text-3: #9198a1;
+  --line: #3d444d; --shadow: none;
+  --accent: #58a6ff; --accent-strong: #79c0ff; --action-bg: #1f6feb;
+  --good: #3fb950; --bad: #f85149; --watch: #d29922; color-scheme: dark;
+}
+* { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 var(--sans); }
-h1, h2 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
+h1, h2 { font-family: var(--sans); font-weight: 600; margin: 0; text-wrap: balance; }
 h1 { font-size: 32px; line-height: 1.2; } h2 { font-size: 22px; line-height: 1.3; }
 .meta { font-size: 13px; color: var(--text-2); border-bottom: 1px solid var(--line); padding: 12px 0; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 20px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; box-shadow: var(--shadow); padding: 20px; min-width: 0; }
 .num { font-size: 40px; font-weight: 500; line-height: 1; }
 .pill { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 500; }
 .good { color: var(--good); background: var(--good-bg); } .bad { color: var(--bad); background: var(--bad-bg); } .watch { color: var(--watch); background: var(--watch-bg); }
-button { font: 500 16px var(--sans); border-radius: 10px; padding: 10px 16px; cursor: pointer; background: var(--card); color: var(--text); border: 1px solid var(--line); }
-button.main { background: var(--clay-strong); color: #fff; border: 0; }
-input, select, textarea { font: 16px var(--sans); background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+button { font: 500 16px var(--sans); border-radius: 6px; padding: 10px 16px; cursor: pointer; background: var(--card); color: var(--text); border: 1px solid var(--line); }
+button.main { background: var(--action-bg); color: #fff; border: 0; }
+input, select, textarea { font: 16px var(--sans); background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 ```
 
 ## 8. The web version
@@ -169,7 +178,7 @@ Use this when they ask for a website, the web version, or to put the page on Git
 
 **The stack.** Vite, React, TypeScript, Tailwind CSS and shadcn/ui (cards, tabs, buttons, badges, tooltips, dialogs). Charts with Recharts, through shadcn's chart component. Motion for movement. Icons from lucide-react. Nothing paid, no API keys.
 
-**Same look.** Put the style kit into the shadcn theme: clay as the primary color, the serif for titles, the same 5 text sizes, the same dark mode. It must still look like Claude.
+**Same look.** Put the style kit into the shadcn theme: blue as the primary color, system sans-serif throughout, the same 5 text sizes, the same dark mode.
 
 **What the libraries are for.** Only what helps the reader:
 
@@ -180,13 +189,13 @@ Use this when they ask for a website, the web version, or to put the page on Git
 - Tabs, steps and slides switch with a short slide.
 - A light and dark switch in the corner.
 
-**You can see the page now.** Run it, open it in a browser at 1440px and 400px wide, and look at the screenshots. Fix anything that spills, overlaps or looks empty, then look again. Read the first screen as the reader before you ship.
+**Check the running page.** Run it, open it in a browser at 1440px and 400px wide when browser tools are available, and look at the screenshots. Fix anything that spills, overlaps or looks empty, then look again. Read the first screen as the reader before you ship. If browser tools are unavailable, run the project's checks, review responsive styles, and state the visual-inspection limitation.
 
 **Private by default.** Business pages are not for the whole internet:
 
-1. Check `gh auth status` and `vercel whoami`. If either is signed out, start the sign-in (`gh auth login --web`, `vercel login`) and tell the person which button to click in the browser.
-2. Push the code to a new private GitHub repo.
-3. Deploy it to Vercel. Add a passcode gate: a `middleware.js` at the root (Vercel Routing Middleware) that shows a passcode screen in the same Claude look until the passcode is right, then sets a cookie. Keep the passcode in a Vercel environment variable, never in the code. Send `X-Robots-Tag: noindex` so search engines skip it.
-4. Check it from outside: locked without the passcode, open with it.
+1. Build locally first. Only create a remote repo, push, or deploy when the user requests publication. Follow the host's permission prompts.
+2. Before publication, check `gh auth status` and `vercel whoami`. If a tool is missing, explain what is needed; if signed out, guide the user through `gh auth login --web` or `vercel login`. Keep authentication interactive.
+3. Push the code to a new private GitHub repo and deploy to Vercel. Protect business pages with server-side access control, such as a passcode gate in Vercel Routing Middleware. Validate the passcode on the server against a Vercel environment variable, never in client code. Use a signed, expiring session cookie with HttpOnly, Secure and SameSite flags; do not trust a cookie just because it exists. Send `X-Robots-Tag: noindex` so search engines skip it.
+4. Check it from outside: locked without authorization, still locked with an invalid cookie, open with valid authorization. Share credentials through a separate secure channel, not in chat or source control.
 
-End with 3 lines: the link, the passcode, the repo. Nothing else.
+For a local build, end with the project path and run command. After publication, end with the link, the repo, and how the reader obtains access. Do not print the passcode.

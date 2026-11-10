@@ -1,0 +1,22 @@
+{
+  "name": "grenade",
+  "owner": { "name": "stefanstranger" },
+  "metadata": {
+    "description": "Reader-first HTML design skills for GitHub Copilot.",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "noslop",
+      "source": "./",
+      "description": "Create or improve HTML pages with GitHub Copilot: clear visuals, reader-first layouts, and GitHub-inspired styling.",
+      "version": "2.0.0",
+      "author": { "name": "stefanstranger" },
+      "homepage": "https://github.com/stefanstranger/grenade",
+      "repository": "https://github.com/stefanstranger/grenade",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["copilot", "html", "design", "writing", "slop"]
+    }
+  ]
+}
