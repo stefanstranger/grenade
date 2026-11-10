@@ -1,4 +1,14 @@
-# Grenade for GitHub Copilot
+---
+title: Grenade for GitHub Copilot
+description: A GitHub Copilot adaptation of Ruben Hassid's Grenade, distributed as a plugin containing the noslop skill.
+---
+
+## Grenade for GitHub Copilot
+
+Based on [Grenade by Ruben Hassid](https://github.com/rubenhassid1/grenade),
+originally developed for Claude and shared through his
+[How to AI newsletter](https://ruben.substack.com). This fork adapts Ruben's
+reader-first design approach for GitHub Copilot.
 
 Make HTML pages that someone with zero context can understand in five seconds.
 The **noslop** skill picks the layout from the reader's job, puts visuals before
@@ -7,6 +17,30 @@ paragraphs, and uses GitHub-inspired colors, typography, and light/dark themes.
 This fork targets **GitHub Copilot CLI and GitHub Copilot in VS Code**. It replaces
 the upstream Claude integration; it does not depend on Claude or an API key.
 You need access to GitHub Copilot and a client that supports Agent Skills.
+
+## How this fork works
+
+Ruben's original README is the instruction set: you ask Claude to make a page
+and follow the linked repository. In this fork, the README explains installation
+and usage; the design instructions live in the
+[noslop skill](.github/skills/noslop/SKILL.md).
+
+For reuse across projects, install this fork as a **Copilot plugin**. The plugin
+packages the skill so Copilot can discover it without fetching a repository URL
+in every conversation. A skill supplies the workflow; a plugin distributes it.
+This repository already includes the plugin manifest and marketplace catalog.
+
+Follow the [Copilot CLI installation](#github-copilot-cli) or
+[VS Code setup](#github-copilot-in-vs-code), then ask:
+
+```text
+Use the noslop skill to make an HTML page about [YOUR TOPIC] for [WHO WILL READ IT].
+They need to [DECIDE / LEARN / CHECK SOMETHING] and will [READ ONCE / RETURN DAILY].
+```
+
+For a single project, opening this checkout or copying the skill into that
+project also works; plugin installation is optional. Packaging improves
+discovery and reuse, not a guarantee of better generated pages.
 
 ## See the difference: without and with noslop
 
