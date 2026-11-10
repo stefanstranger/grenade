@@ -10,7 +10,7 @@ You need access to GitHub Copilot and a client that supports Agent Skills.
 
 ## GitHub Copilot CLI
 
-Install directly from this fork:
+Install the Copilot version directly from this fork's `main` branch:
 
 ```shell
 copilot plugin install stefanstranger/grenade
@@ -32,14 +32,14 @@ They need to decide which two projects to fund and will read it once.
 ```
 
 Check availability with `copilot plugin list` and `copilot skill list`.
-To try this checkout before publishing or merging the branch, run from its root:
+For local development, you can optionally load this checkout from its root:
 
 ```shell
 copilot --plugin-dir .
 ```
 
-The remote install commands use the fork's default branch. Until this feature
-branch is merged, use the local checkout to try the migrated version.
+The remote install commands use the fork's default branch, `main`, which already
+contains the Copilot version. A local checkout is not required for installation.
 
 ## GitHub Copilot in VS Code
 
@@ -53,9 +53,9 @@ into that project's `.github/skills` directory. No extension, API integration,
 or duplicate instruction file is required.
 
 On VS Code versions with agent plugin support, you can instead run
-**Chat: Install Plugin from Source** and select this checkout's directory.
-After the branch is merged, the source can also be
-`https://github.com/stefanstranger/grenade`. Review the installed skill in
+**Chat: Install Plugin from Source** and enter
+`https://github.com/stefanstranger/grenade`, or select this checkout's directory
+for local development. Review the installed skill in
 **Chat: Open Customizations**. Plugin support must be enabled for this route;
 copying the project skill does not require plugins.
 
